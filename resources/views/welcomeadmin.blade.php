@@ -268,8 +268,6 @@
                                 </div>
                             </div>
                         @endforeach
-                        <a href="" class="btn btn-warning" >Edit</a>
-                      
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
 

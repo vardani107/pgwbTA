@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ekstrakulikuler;
 
 class loginController extends Controller
 {
     public function index(){
-        return view ('login');
+        $daftar_ekskul = ekstrakulikuler::all();
+        return view ('login', compact('daftar_ekskul'));
     }
 
     public function authenticate(Request $request){
@@ -20,8 +23,14 @@ class loginController extends Controller
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('/');
+            if(Auth::User()->role == 'admin'){
+                return redirect()->intended('admin');
+            }else{
+                return redirect()->intended('siswa');
+            }
+            return redirect()->intended('login');
         }
+        
  
         return back()->with('loginError','Login Anda Gagal');
     }
@@ -30,7 +39,7 @@ class loginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('REGISTER');
+        return redirect('login');
     }
 
     // public function signup()

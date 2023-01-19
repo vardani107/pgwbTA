@@ -54,8 +54,15 @@
                                     </div> 
                                     @endif
 
-                                    <form action="login" class="user" method="post">
+                                    <form action="{{ route('register.store')}}" class="user" method="post">
                                         @csrf
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control "
+                                                id="name" 
+                                                placeholder="Masukkan nama" name="name">
+                                        </div>
+
                                         <div class="form-group">
                                             <input type="email" class="form-control "
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -67,23 +74,7 @@
                                                 id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
 
-                                       <div class="form-group">
-                                        <select class="form-select " aria-label="Default select example">
-                                            <option selected>Siapakkah anda??</option>
-                                            <option value="1">Admin</option>
-                                            <option value="2">Siswa</option>
-                                           
-                                          </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                            <input type="submit" class="btn btn-primary btn-block" value="login">
+                                            <input type="submit" class="btn btn-primary btn-block" value="register">
                                         <hr>
                                         
                                     </form>

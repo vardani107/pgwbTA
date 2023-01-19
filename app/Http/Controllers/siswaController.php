@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+
+use App\Models\tabelmaster;
+use App\Models\ekstrakulikuler;
+use App\Models\kelas;
 use Illuminate\Http\Request;
 
-class daftarController extends Controller
+class siswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +16,9 @@ class daftarController extends Controller
      */
     public function index()
     {
-        //
-        return view('register'); 
+        $daftar_ekskul = ekstrakulikuler::all();
+        $daftar_kelas= kelas::all();
+        return view('siswa' , compact('daftar_ekskul', 'daftar_kelas'));
     }
 
     /**
@@ -24,7 +28,7 @@ class daftarController extends Controller
      */
     public function create()
     {
-        return view('register');
+        //
     }
 
     /**
@@ -35,19 +39,7 @@ class daftarController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request(),[
-        //     'name' => 'required',
-        //     'no_hp' => 'required',
-        //     'kelas' => 'required'
         
-        // ]);
-        $user = user::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-
-        return redirect('/');
     }
 
     /**

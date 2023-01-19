@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
-use Illuminate\Http\Request;
 
-class daftarController extends Controller
+use Illuminate\Http\Request;
+use App\Models\tabelmaster;
+use App\Models\kelas;
+use App\Models\ekstrakulikuler;
+use App\Models\update;
+
+class welcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +17,10 @@ class daftarController extends Controller
      */
     public function index()
     {
-        //
-        return view('register'); 
+       
+        $data_update= update::all();
+      
+        return view('welcome' , compact('data_update'));
     }
 
     /**
@@ -24,7 +30,7 @@ class daftarController extends Controller
      */
     public function create()
     {
-        return view('register');
+        //
     }
 
     /**
@@ -35,19 +41,7 @@ class daftarController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request(),[
-        //     'name' => 'required',
-        //     'no_hp' => 'required',
-        //     'kelas' => 'required'
-        
-        // ]);
-        $user = user::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-
-        return redirect('/');
+        //
     }
 
     /**

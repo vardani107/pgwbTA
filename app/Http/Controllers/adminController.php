@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\kelas;
+use App\Models\tabelmaster;
+use App\Models\ekstrakulikuler;
 
 class adminController extends Controller
 {
@@ -11,11 +14,34 @@ class adminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function welcome()
     {
-        return view ('admindance');
+        $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id','1')->get();
+        $daftar_ekskul = ekstrakulikuler::all();
+        $daftar_kelas= kelas::all();
+        // $dance = tabelmaster::where('ekstrakulikuler_id','1');
+        return view('/' , compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
     }
 
+   
+    public function index()
+    {
+        $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id','1')->get();
+        $daftar_ekskul = ekstrakulikuler::all();
+        $daftar_kelas= kelas::all();
+        // $dance = tabelmaster::where('ekstrakulikuler_id','1');
+        return view('admindance' , compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
+    }
+
+    public function futsal()
+    {
+        $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id','2')->get();
+        $daftar_ekskul = ekstrakulikuler::all();
+        $daftar_kelas= kelas::all();
+        // $dance = tabelmaster::where('ekstrakulikuler_id','1');
+        return view('adminfutsal' , compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
+    }
     /**
      * Show the form for creating a new resource.
      *

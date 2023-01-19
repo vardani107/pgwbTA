@@ -13,14 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('daftar', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('no_hp');
-            $table->string('kelas');
-            $table->timestamps();
-
-        });
+        //
     }
 
     /**
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('daftar');
+        //
     }
 };

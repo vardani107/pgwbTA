@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\daftarController;
+use App\Http\Controllers\siswaController;
+use App\Http\Controllers\tabelmasterController;
+use App\Http\Controllers\welcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +19,11 @@ use App\Http\Controllers\daftarController;
 |
 */
 
-Route::get('welcome', function () {
-    return view('welcome');
-});
-Route::get('register', function () {
-    return view('register');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('admin', function () {
+    return view('admin');
 });
 
 //guest
@@ -30,6 +33,20 @@ Route::get('register', function () {
 
 // });
 
-Route::resource('admindance', adminController::class);
-Route::resource('/', daftarController::class);
 
+//siswa
+// Route::middleware('siswa')->group(function () {
+    Route::resource('siswa', siswaController::class);
+// });
+
+// Route::middleware('admin')->group(function () {
+    Route::resource('admindance', adminController::class);
+    Route::get('adminfutsal',[ adminController::class,'futsal']);
+// });
+Route::resource('/', welcomeController::class);
+Route::get('welcomeadmin',[ welcomeController::class,'index']);
+Route::resource('register', daftarController::class);
+Route::resource('tabelmaster', tabelmasterController::class);
+
+Route::get('/login', [loginController::class, 'index'])->name('login');
+Route::post('/login', [loginController::class, 'authenticate']);

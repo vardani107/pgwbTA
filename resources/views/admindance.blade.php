@@ -3,48 +3,12 @@
 @section('content')
 
 
-<div class="row px-5 pb-5">
-    <p class="text-dark fw-bold p-4 h3 mb-5 text-center">EKSTRAKULIKULER DANCE</p>
-<div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase px-2 mb-1">
-                        Jumlah Siswa</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                </div>
-                <div class="col-auto p-2">
-                    <i class="fas fa-child fa-2x text-gray-300"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Earnings (Monthly) Card Example -->
-<div class="col-xl-3 col-md-6 mb-4 ">
-    <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase px-2 mb-1">
-                        Jumlah Siswa</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                </div>
-                <div class="col-auto p-2">
-                    <i class="fas fa-child fa-2x text-gray-300"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<p class="fw-bold mt-5 text-center  text-dark h5">DAFTAR NAMA SISWA</p>
+<div class="container">
+ <h2 class="fw-bold text-center">Daftar Nama Siswa</h2>
 <div class="card-body p-5">
-    
-    <table class="table table-bordered text-center table table-striped text-dark fw-bold">
+   
+    <table class=" table table-bordered text-center table table-striped text-dark fw-bold">
          <thead>
             <th>No</th>
              <th>Nama Siswa</th>
@@ -52,26 +16,53 @@
              <th>Action</th>
          </thead>
          <tbody>
+             @foreach ($daftar_siswa as $item)
              <tr>
-                <td>1</td>
-                 <td>Sari Roti</td>
-                 <td>30</td>
-                 <td>
-                     <a href="" class="btn btn-warning" >Edit</a>
-                     <a href="" class="btn btn-danger">Hapus</a>
-                 </td>
-             </tr>
-             <tr>
-                <td>1</td>
-                <td>Hihang Hoheng</td>
-                <td>30</td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->nama}}</td>
+                <td>{{$item->kelas_id}}</td>
                 <td>
                     <a href="" class="btn btn-warning" >Edit</a>
                     <a href="" class="btn btn-danger">Hapus</a>
                 </td>
-             </tr>
-         </tbody>
-    </table>
+            </tr>
+            @endforeach
+        </tbody>
+         
+    </table> 
+ </div>
+</div>
+ <div class="p-5">
+    <div class="row   ">
+    <div class="col-12 ">
+        <h2 class="fw-bold text-center">Update Data</h2>
+        <form action="">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Nama Ekstrakulikuler</label>
+        <input type="text"  class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+      </div>
+      <div class="mb-5">
+        <label for="formGroupExampleInput2" class="form-label">Deskripsi</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Masukkan deskripsi ekstrakulikuler">
+      </div>
+      <div class="row ">
+        <p>Jadwal Ekstrakulikuler</p>
+        <div class="col"> 
+            <label for="formGroupExampleInput2" class="form-label">Hari :</label>
+          <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+        </div>
+        <div class="col">
+            <label for="formGroupExampleInput2" class="form-label">Jam:</label>
+          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+        </div>
+      </div>
+      <div class="mt-5">
+        <input type="submit" class="btn btn-outline-danger" value="Upload">
+      </div>
+
+        </form>
+    </div>
+    </div>
  </div>
 
 @endsection

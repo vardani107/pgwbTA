@@ -14,9 +14,9 @@
     <!-- Nav Item - Dashboard -->
 
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard">
+        <a class="nav-link" href="welcomeadmin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dance</span></a>
+            <span>Update Data</span></a>
     </li>
     <hr class="sidebar-divider my-0">
 
@@ -25,74 +25,12 @@
     <li class="nav-item">
         <a class="nav-link" href="/mastersiswa">
             <i class="fas fa-fw fa-solid fa-user"></i>
-            <span>Teater</span></a>   
+            <span>Manage Data</span></a>   
     </li>
     <hr class="sidebar-divider my-0">
 
 
-    <li class="nav-item">
-        <a class="nav-link" href="/masterproject">
-            <i class="fas fa-fw fa-solid fa-file"></i>
-            <span>Futsal</span></a>       
-    </li>
-    <hr class="sidebar-divider my-0">
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>Paskibra</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
-
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>It Club</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
     
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>English Club</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
-    
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>Japanese</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
-
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>Paduan Suara</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
-    
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>voli</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
-    
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>PasMkibra</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
-    
-    <li class="nav-item">
-        <a class="nav-link" href="/masterkontak">
-            <i class="fas fa-fw fa-solid fa-address-card"></i>
-            <span>Paskibra</span></a>     
-    </li>
-    <hr class="sidebar-divider my-0">
     
 
 {{--
