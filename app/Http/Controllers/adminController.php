@@ -24,6 +24,20 @@ class adminController extends Controller
         return view('/' , compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
     }
 
+    public function alip()
+    {
+        $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id','1')->get();
+        $daftar_ekskul = ekstrakulikuler::all();
+        $daftar_kelas= kelas::all();
+        // $dance = tabelmaster::where('ekstrakulikuler_id','1');
+        return view('alip.adminalip' , compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
+    }
+
+    public function tambahdrumband()
+    {
+        return view('alip.tambahdrumband');
+    }
+
    
     public function index()
     {
@@ -49,7 +63,7 @@ class adminController extends Controller
      */
     public function create()
     {
-        //
+        return view('alip.editdrumband');
     }
 
     /**
