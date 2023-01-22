@@ -1,4 +1,115 @@
-<!DOCTYPE html>
+@extends('layoutv2.body')
+@section('content')
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card border-0 shadow-lg p-3 mb-5 bg-body rounded-3">
+                <div class="card-body mb-0">
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="/" class="btn btn-outline-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <h1 class="fw-bold mb-4">LOGIN</h1>
+                        </div>
+                    </div>
+
+                    <form action="login" class="user" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label class="font-size-2" for="ekstrakulikuler"> Masukkan Email </label>
+                            <input type="email" class="form-control " id="email" placeholder="Enter Email Address..."
+                                name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="ekstrakulikuler"> Password</label>
+                            <input type="password" class="form-control " id="password" placeholder="Password"
+                                name="password">
+                        </div>
+
+                        {{-- <div class="form-group">
+                    <label for="ekstrakulikuler"> Pilih Ekstrakulikuler</label>
+                    <select class="form-select form-control  " id="ekstrakulikuler" name="ekstrakulikuler " aria-label="Default select example">
+                        @foreach ($daftar_ekskul as $item)
+                            <option value="{{($item->id)}}">{{($item->nama_ekskul)}}</option>
+                        @endforeach
+                </select>
+                
+            </div> --}}
+                        <div class="form-group m-0">
+                            <input type="submit" class="btn btn-warning w-25 mb-3" value="LOGIN">
+                            <p class="m-0">
+                                Ndak punya akun ? <a href="{{ url('/register') }}"
+                                    style="text-decoration-color: yellow">Buat Sekarang</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -75,32 +186,32 @@
                                         </select>
                                         
                                     </div> --}}
-                                        <input type="submit" class="btn btn-primary btn-block" value="login">
-                                        
-                                    </form>
+{{-- <input type="submit" class="btn btn-primary btn-block" value="login">
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</form>
 
-            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="template/vendor/jquery/jquery.min.js"></script>
-    <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
 
-    <!-- Core plugin JavaScript-->
-    <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="template/vendor/jquery/jquery.min.js"></script>
+<script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="template/js/sb-admin-2.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="template/js/sb-admin-2.min.js"></script>
 
 </body>
 
-</html>
+</html> --}}
