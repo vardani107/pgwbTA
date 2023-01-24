@@ -105,7 +105,7 @@
                         </button>
                     </div>
                 </div>
-                <table class="table table-borderless table-hover mt-4">
+                <table class="table table table-striped table-borderless table-hover mt-4">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -115,7 +115,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($daftar_siswa as $item)
                         <tr>
+                           <td>{{$loop->iteration}}</td>
+                           <td>{{$item->nama}}</td>
+                           <td>{{$item->kelas_id}}</td>
+                           <td>
+                            <a href="{{ route('admindance.create') }}" class="btn btn-outline-warning">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="{{ route('admindance.hapus', $item -> id) }}" class="btn btn-outline-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                           </td>
+                       </tr>
+                       @endforeach
+                        {{-- <tr>
                             <td>1</td>
                             <td>Alip</td>
                             <td>12 RPL 2</td>
@@ -127,20 +142,8 @@
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>ppp</td>
-                            <td>11 RPL 2</td>
-                            <td>
-                                <a href="" class="btn btn-outline-warning">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a href="" class="btn btn-outline-danger">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        </tr> --}}
+                       
                     </tbody>
                 </table>
             </div>

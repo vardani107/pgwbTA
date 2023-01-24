@@ -30,6 +30,10 @@ Route::get('adminall', function () {
     return view('alip.adminall');
 });
 
+// Route::get('viewadmin', function () {
+//     return view('viewadmin');
+// });
+
 //guest
 // Route::middleware('guest')->group(function () {
 //    Route::get('register', [loginController::class,'signup'] ->name('signup');
@@ -47,9 +51,10 @@ Route::get('adminall', function () {
     Route::resource('admindance', adminController::class);
     Route::get('adminfutsal',[ adminController::class,'futsal']);
     Route::get('adminalip',[ adminController::class,'alip']);
+    Route::get('admindance/{admindance}/hapus', [adminController::class, 'hapus'])->name('admindance.hapus');
 // });
 Route::resource('/', welcomeController::class);
-Route::get('welcomeadmin',[ welcomeController::class,'index']);
+Route::get('viewadmin',[ welcomeController::class,'index']);
 Route::resource('register', daftarController::class);
 Route::resource('tabelmaster', tabelmasterController::class);
 

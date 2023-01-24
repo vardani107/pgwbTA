@@ -28,7 +28,7 @@
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="{{ asset('css/styles.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -72,9 +72,6 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
-
-
-
                 <!-- Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown" role="button"
@@ -82,17 +79,17 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="article-details.html"><span class="item-text"><i
                                     class='fa fa-whatsapp'></i> Custumer Service</span></a>
-
                     </div>
                 </li>
                 <!-- end of dropdown menu -->
 
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link  page-scroll" href="/login" id="navbarDropdown" data-toggle="modal"
+                        role="button" data-target="#logoutModal">LOGOUT </a> 
+                </li>
             </ul>
 
-            <a class="nav-link page-scroll text-white" href="/login" data-toggle="modal" data-target="#logoutModal">
-                LOGOUT
-            </a>
+
 
             <span class="nav-item social-icons">
                 <span class="fa-stack">
@@ -119,13 +116,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-container">
-
                         <h1>EKSTRAKULIKULER SMKN 1 SURABAYA</h1>
                         <p class="p-large">SMK Negeri 1 Surabaya memiliki lebih dari 30 ekstrakulikuler. Pada wesite
                             ini kalian dapat menemukan informasi terkait ekstrakulikuler yang ingin tersebut, ingin tau
                             lebih banyak? Yuk lihat profil Ekstrakulikuler SMK Negeri 1 Surabaya.</p>
-
-
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -291,8 +285,8 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <select class="form-select" id="kelas_id" name="kelas_id"
-                                                    aria-label="Default select example">
+                                                <label for="kelas">Pilih Kelas</label>
+                                                <select class="form-control" id="kelas_id" name="kelas_id">
                                                     @foreach ($daftar_kelas as $item)
                                                         <option value="{{ $item->id }}">{{ $item->kelas }}
                                                         </option>
@@ -300,7 +294,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                 <label for="ekstrakulikuler">Pilih Ekstrakulikuler</label>
+                                                <label for="ekstrakulikuler">Pilih Ekstrakulikuler</label>
                                                 <select class="form-control" id="ekstrakulikuler_id"
                                                     name="ekstrakulikuler_id">
                                                     @foreach ($daftar_ekskul as $item)

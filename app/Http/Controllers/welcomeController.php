@@ -20,9 +20,11 @@ class welcomeController extends Controller
        
         $data_update= update::all();
       
-        return view('welcome' , compact('data_update'));
+        return view('viewadmin' , compact('data_update'));
     }
 
+
+    
     /**
      * Show the form for creating a new resource.
      *

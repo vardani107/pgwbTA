@@ -1,5 +1,5 @@
    <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top p-2">
+   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top mb-5 p-2">
 
     <!-- Text Logo - Use this if you don't have a graphic logo -->
     <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Corso</a> -->
@@ -16,7 +16,7 @@
     </button>
     <!-- end of mobile menu toggle button -->
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="collapse navbar-collapse " id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="register">REGISTER <span class="sr-only">(current)</span></a>

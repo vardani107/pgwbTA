@@ -5,13 +5,13 @@
     @include('layoutv2.css')
 </head>
 
-<body data-spy="scroll" data-target=".fixed-top">
+<body data-spy="scroll" class="bg-dark" data-target=".fixed-top">
 
     {{-- navbar --}}
         @include('layoutv2.navbar')
 
 
-        <div class="container mt-5">
+        <div class="container " style="margin-top: 100px">
             <div class="content mt-3">
                 @yield('content')
             </div>

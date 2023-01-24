@@ -44,7 +44,7 @@ Colors:
 /******************************/
 body,
 html {
-	padding-top: 20px;
+	
     width: 100%;
 	height: 100%;
 }
@@ -1814,7 +1814,7 @@ a:hover.back-to-top {
 	}
 
 	.navbar-custom .fa-stack {
-		width: 2em;
+		width: 2rem;
 		margin-left: 0.25rem;
 		font-size: 0.75rem;
 	}

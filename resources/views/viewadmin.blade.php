@@ -24,7 +24,7 @@
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
@@ -71,7 +71,13 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
-                
+                {{-- <li class="nav-item">
+                    <a class="nav-link page-scroll" href="register">REGISTER <span class="sr-only">(current)</span></a>
+                </li> --}}
+                {{-- <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#description">DETAILS</a>
+                </li> --}}
+
                 <!-- Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown" role="button"
@@ -116,7 +122,7 @@
                             ini kalian dapat menemukan informasi terkait ekstrakulikuler yang ingin tersebut, ingin tau
                             lebih banyak? Yuk lihat profil Ekstrakulikuler SMK Negeri 1 Surabaya.</p>
                         {{-- <a class="btn-solid-lg page-scroll" href="{{route('register.index')}}">REGISTER</a> --}}
-                        <a class="btn-outline-lg page-scroll" href="{{route('login')}}">LOGIN</a>
+                        {{-- <a class="btn-outline-lg page-scroll" href="{{route('login')}}">LOGIN</a> --}}
 
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -262,6 +268,8 @@
                                 </div>
                             </div>
                         @endforeach
+                        
+                      
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
 

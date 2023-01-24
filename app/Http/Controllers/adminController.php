@@ -63,7 +63,7 @@ class adminController extends Controller
      */
     public function create()
     {
-        return view('alip.editdrumband');
+        return view('alip.editdrumband');   
     }
 
     /**
@@ -96,7 +96,10 @@ class adminController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        // $daftar_siswa = tabelmaster::find($id);
+    
+        return view('alip.editdrumband');
     }
 
     /**
@@ -119,6 +122,13 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
+    }
+
+    public function hapus($id)
+    {
+        $daftar_siswa=tabelmaster::find($id)->delete();
+        // Session::flash('success', 'data berhasil dihapus !!!');
+        return redirect('/adminalip');
     }
 }
