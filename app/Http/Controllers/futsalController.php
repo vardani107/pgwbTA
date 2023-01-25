@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\tabelmaster;
-use App\Models\kelas;
-use App\Models\ekstrakulikuler;
-use App\Models\update;
-use App\Http\Controllers\loginController;
 
-class welcomeController extends Controller
+class futsalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +13,9 @@ class welcomeController extends Controller
      */
     public function index()
     {
-       
-        $data_update= update::all();
-        return view('welcome' , compact('data_update'));
+        return view('futsal');
     }
 
-
-    
     /**
      * Show the form for creating a new resource.
      *

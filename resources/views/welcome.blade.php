@@ -116,7 +116,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-container">
-
                         <h1>EKSTRAKULIKULER SMKN 1 SURABAYA</h1>
                         <p class="p-large">SMK Negeri 1 Surabaya memiliki lebih dari 30 ekstrakulikuler. Pada wesite
                             ini kalian dapat menemukan informasi terkait ekstrakulikuler yang ingin tersebut, ingin tau

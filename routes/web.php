@@ -7,6 +7,8 @@ use App\Http\Controllers\daftarController;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\tabelmasterController;
 use App\Http\Controllers\welcomeController;
+use App\Http\Controllers\futsalController;
+use App\Http\Controllers\danceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,45 +20,16 @@ use App\Http\Controllers\welcomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('admin', function () {
-    return view('admin');
-});
-
-Route::get('adminall', function () {
-    return view('alip.adminall');
-});
-
-// Route::get('viewadmin', function () {
-//     return view('viewadmin');
-// });
-
-//guest
-// Route::middleware('guest')->group(function () {
-//    Route::get('register', [loginController::class,'signup'] ->name('signup');
-
-
-// });
-
-
-//siswa
-// Route::middleware('siswa')->group(function () {
-    Route::resource('siswa', siswaController::class);
-// });
-
-// Route::middleware('admin')->group(function () {
-    Route::resource('admindance', adminController::class);
-    Route::get('adminfutsal',[ adminController::class,'futsal']);
-    Route::get('adminalip',[ adminController::class,'alip']);
-    Route::get('admindance/{admindance}/hapus', [adminController::class, 'hapus'])->name('admindance.hapus');
-// });
-Route::resource('/', welcomeController::class);
-Route::get('viewadmin',[ welcomeController::class,'index']);
-Route::resource('register', daftarController::class);
-Route::resource('tabelmaster', tabelmasterController::class);
-
 Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'authenticate']);
+Route::post('logout', [loginController::class, 'logout']);
+
+route::resource('/', welcomeController::class);
+
+route::middleware('auth')->group(function ()  {
+    route::resource('admin', adminController::class);
+    route::resource('futsal', futsalController::class);
+    route::resource('dance', danceController::class);
+    Route::get('preview', [adminController::class, 'preview'])->name('admin.preview');
+});
+

@@ -24,7 +24,7 @@
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
@@ -51,72 +51,26 @@
     </div>
     <!-- end of preloader -->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top p-2">
-
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Corso</a> -->
-
-        <!-- Image Logo -->
-        <a class="navbar-brand logo-image " href="http://www.smkn1-sby.sch.id/"><img src="images/logosmk 1.png"
-                alt="alternative"></a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button>
-        <!-- end of mobile menu toggle button -->
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                
-                <!-- Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false">CONTACT</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="article-details.html"><span class="item-text"><i
-                                    class='fa fa-whatsapp'></i> Custumer Service</span></a>
-
-                    </div>
-                </li>
-                <!-- end of dropdown menu -->
-
-            </ul>
-            <span class="nav-item social-icons">
-                <span class="fa-stack">
-                    <a href="#your-link">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-instagram fw-bold fa-stack-1x"></i>
-                    </a>
-                </span>
-                <span class="fa-stack">
-                    <a href="#your-link">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-twitter fa-stack-1x"></i>
-                    </a>
-                </span>
-            </span>
-        </div>
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
 
 
     <!-- Header -->
+
     <header id="header" class="header">
+        <div class="row">
+            <div class="col-4">
+                <a href="{{route('admin.index')}}" class="btn btn-secondary ">Back</a>
+            </div>
+        </div> 
         <div class="container mb-3">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-container">
-
                         <h1>EKSTRAKULIKULER SMKN 1 SURABAYA</h1>
                         <p class="p-large">SMK Negeri 1 Surabaya memiliki lebih dari 30 ekstrakulikuler. Pada wesite
                             ini kalian dapat menemukan informasi terkait ekstrakulikuler yang ingin tersebut, ingin tau
                             lebih banyak? Yuk lihat profil Ekstrakulikuler SMK Negeri 1 Surabaya.</p>
                         {{-- <a class="btn-solid-lg page-scroll" href="{{route('register.index')}}">REGISTER</a> --}}
-                        <a class="btn-outline-lg page-scroll" href="{{route('login')}}">LOGIN</a>
+                        <a class="btn-outline-lg page-scroll" href="#">LOGIN</a>
 
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -219,55 +173,55 @@
 
     <!-- Students -->
     <div class="container">
-    <div class="basic-3">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div id="carouselExampleIndicators" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
-                               
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/dance2.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div> <!-- end of col -->
-                
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        @foreach ($data_update as $item)
-                            <div class="card border-0">
-                                <div class="card-body ">
-                                    <h2 class="fw-bold">{{$item->judul}}</h2>
-                                    <p class="card-text">{{$item->deskripsi}}</p>
-                                    <h6 class="fw-bold">Jadwal Ekstrakulikuler</h6>
-                                    <p class="card-text">Hari : {{$item->hari}}</p>
-                                    <p class="card-text">Jam : {{$item->jam}}</p>
+        <div class="basic-3">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
+
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/dance2.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
                                 </div>
                             </div>
-                        @endforeach
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div> <!-- end of col -->
 
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-3 -->
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            @foreach ($data_update as $item)
+                                <div class="card border-0">
+                                    <div class="card-body ">
+                                        <h2 class="fw-bold">{{ $item->judul }}</h2>
+                                        <p class="card-text">{{ $item->deskripsi }}</p>
+                                        <h6 class="fw-bold">Jadwal Ekstrakulikuler</h6>
+                                        <p class="card-text">Hari : {{ $item->hari }}</p>
+                                        <p class="card-text">Jam : {{ $item->jam }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-3 -->
     </div>
     <!-- end of students -->
 
@@ -358,11 +312,11 @@
                             prinsip-prinsip dasar Gerakan Palang merah Indonesia, dan mengembangkan kapasitas organisasi
                             PMI. </p>
 
-                            <p> Jadwal Pelaksanaan <br>
-                                Hari : <br>
-                                Jam  :
-                            </p>
-                       
+                        <p> Jadwal Pelaksanaan <br>
+                            Hari : <br>
+                            Jam :
+                        </p>
+
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
 

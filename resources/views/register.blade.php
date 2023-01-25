@@ -1,4 +1,79 @@
-<!DOCTYPE html>
+@extends('layoutv2.body')
+@section('content')
+
+    <div class="h-100 row d-flex justify-content-center">
+        <div class="col-md-9">
+            <div class="card border-0 shadow-lg p-0 m-0 mb-5 bg-body rounded-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="{{ asset('images/futsal1.jpg')}}" alt="futsal" class="w-100 h-100 m-0 -p-0">
+                        </div>
+                        <div class="col m-0 p-0">
+                            <div class="container p-4">
+                                <a href="">
+                                    a
+                                </a>
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">HALO SMEASMANIA!!</h1>
+                                </div>
+            
+                                @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $item)
+                                                <li>{{ $item }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+            
+                                <form action="{{ route('register.store') }}" class="user" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <input type="text" class="form-control " id="name" placeholder="Masukkan nama"
+                                            name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control " id="exampleInputEmail" aria-describedby="emailHelp"
+                                            placeholder="Masukkan username" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control " id="exampleInputPassword" placeholder="Password"
+                                            name="password">
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <input type="submit" class="btn btn-primary btn-block" value="REGISTER">
+                                        </div>
+                                        <div class="col">
+                                            <a href="" class="btn">Sudah punya akun ? LOGIN SEKARANG</a>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    </div>
+
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,7 +119,7 @@
                                         <h1 class="h4 text-gray-900 mb-4">HALO SMEASMANIA!!</h1>
                                     </div>
 
-                                    @if (count($errors)>0)
+                                    @if (count($errors) > 0)
                                     <div class="alert alert-danger">
                                         <ul>
                                             @foreach ($errors->all() as $item)
@@ -103,4 +178,4 @@
 
 </body>
 
-</html>
+</html> --}}

@@ -22,28 +22,22 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         user::create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
+            'name' => 'futsal',
+            'email' => 'futsal@gmail.com',
             'password' => bcrypt('12345678'),
-            'role' => 'admin'
+            'role' => 'futsal'
         ]);
         user::create([
-            'name' => 'olip',
-            'email' => 'olip@gmail.com',
+            'name' => 'dance',
+            'email' => 'dance@gmail.com',
             'password' => bcrypt('12345678'),
-            'role' => 'siswa'
+            'role' => 'dance'
         ]);
         user::create([
-            'name' => 'Alip',
-            'email' => 'Alip@gmail.com',
+            'name' => 'pmr',
+            'email' => 'pmr@gmail.com',
             'password' => bcrypt('12345678'),
-            'role' => 'siswa'
-        ]);
-        user::create([
-            'name' => 'Bintang',
-            'email' => 'Bintang@gmail.com',
-            'password' => bcrypt('12345678'),
-            'role' => 'siswa'
+            'role' => 'pmr'
         ]);
         
     }

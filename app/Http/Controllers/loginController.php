@@ -23,12 +23,15 @@ class loginController extends Controller
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
  
-            if(Auth::User()->role == 'admin'){
-                return redirect()->intended('admin');
+            if(Auth::User()->role == 'futsal'){
+                return redirect()->intended('futsal');
+            }elseif(Auth::User()->role == 'dance'){
+                return redirect()->intended('dance');
+            }elseif(Auth::User()->role == 'pmr'){
+                return redirect()->intended('pmr');
             }else{
-                return redirect()->intended('siswa');
+                return redirect()->intended('login');
             }
-            return redirect()->intended('login');
         }
         
  

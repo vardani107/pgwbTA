@@ -1,13 +1,13 @@
-@extends('layoutv2.body')
-@section('content')
+@extends('layoutv2.bodypolos')
+<div class="container" style="margin-top: 100px">
     <div class="row d-flex justify-content-center">
         <div class="col-md-5">
-            <div class="card border-0 shadow-lg p-3 mb-5 bg-body rounded-3">
+            <div class="card border-0 shadow-lg p-3 mb-5 rounded-3 text-light" style="background-color: #2f3037">
                 <div class="card-body mb-0">
                     <div class="row">
                         <div class="col-4">
-                            <a href="/" class="btn btn-outline-secondary">
-                                <i class="fas fa-angle-left"></i>
+                            <a href="/" class="btn text-light">
+                                <i class="fa-solid fa-angle-left"></i>
                             </a>
                         </div>
                         <div class="col">
@@ -19,7 +19,7 @@
                         @csrf
                         <div class="form-group">
                             <label class="font-size-2" for="ekstrakulikuler"> Masukkan Email </label>
-                            <input type="email" class="form-control " id="email" placeholder="Enter Email Address..."
+                            <input type="email" class="form-control bg-light" id="email" placeholder="Enter Email Address..."
                                 name="email">
                         </div>
                         <div class="form-group">
@@ -27,21 +27,10 @@
                             <input type="password" class="form-control " id="password" placeholder="Password"
                                 name="password">
                         </div>
-
-                        {{-- <div class="form-group">
-                    <label for="ekstrakulikuler"> Pilih Ekstrakulikuler</label>
-                    <select class="form-select form-control  " id="ekstrakulikuler" name="ekstrakulikuler " aria-label="Default select example">
-                        @foreach ($daftar_ekskul as $item)
-                            <option value="{{($item->id)}}">{{($item->nama_ekskul)}}</option>
-                        @endforeach
-                </select>
-                
-            </div> --}}
                         <div class="form-group m-0">
                             <input type="submit" class="btn btn-warning w-25 mb-3" value="LOGIN">
-                            <p class="m-0">
-                                Ndak punya akun ? <a href="{{ url('/register') }}"
-                                    style="text-decoration-color: yellow">Buat Sekarang</a>
+                            <p class="m-0 text-light">
+                                Ndak punya akun ? <a href="{{ url('/register') }}">Buat Sekarang</a>
                             </p>
                         </div>
                     </form>
@@ -49,7 +38,7 @@
             </div>
         </div>
     </div>
-@endsection
+</div>
 
 
 
