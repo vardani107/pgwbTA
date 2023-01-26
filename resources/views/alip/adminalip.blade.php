@@ -61,7 +61,9 @@
                 </div>
                 <div class="row">
                     <div class="col text-end">
-                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="/editview" class="btn btn-warning">Edit</a>
+                        
+                        <a href="{{ route('admin.preview') }}" class="btn text-light">Preview</a>
                     </div>
                 </div>
             </div>
@@ -205,8 +207,8 @@
                         <div class="col-lg-6">
                             <div id="carouselExampleCaptions" class="carousel slide">
 
-                                <div class="carousel-inner style="height: 400px">
-                                    <div class="carousel-item active" ">
+                                <div class="carousel-inner style=" height=" 400px">
+                                    <div class="carousel-item active" >
                                         <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
                                         </div>
@@ -254,7 +256,8 @@
                 </div>
                 <div class="row">
                     <div class="col text-end">
-                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="/editview" class="btn btn-warning">Edit</a>
+                        
                         <a href="{{ route('admin.preview') }}" class="btn text-light">Preview</a>
                     </div>
                 </div>
@@ -392,7 +395,9 @@
                 </div>
                 <div class="row">
                     <div class="col text-end">
-                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="/editview" class="btn btn-warning">Edit</a>
+                        
+                        <a href="{{ route('admin.preview') }}" class="btn text-light">Preview</a>
                     </div>
                 </div>
             </div>

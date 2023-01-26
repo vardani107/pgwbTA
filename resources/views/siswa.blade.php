@@ -25,8 +25,8 @@
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
+    <link href="{{ asset('css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/swiper.css')}}" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
     <link href="{{ asset('css/styles.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -351,7 +351,7 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="post" action="{{ route('register.store') }}">
+                                        <form method="post" action="{{ route('daftar.store') }}">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="text" class="form-control-input" name="name"
@@ -556,7 +556,7 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="post" action="{{ route('register.store') }}">
+                                        <form method="post" action="{{ route('daftar.store') }}">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="text" class="form-control-input" name="name"

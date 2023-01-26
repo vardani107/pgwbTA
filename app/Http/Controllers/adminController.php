@@ -50,7 +50,9 @@ class adminController extends Controller
     public function index()
     {
         $daftar_siswa = tabelmaster::all();
-        return view('alip.adminalip', compact('daftar_siswa'));
+        $daftar_kelas = kelas::all();
+        $daftar_ekskul = ekstrakulikuler::all();
+        return view('alip.adminalip', compact('daftar_siswa','daftar_kelas','daftar_ekskul'));
     }
 
     public function futsal()

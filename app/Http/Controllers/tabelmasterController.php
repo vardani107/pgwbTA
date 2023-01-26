@@ -37,7 +37,7 @@ class tabelmasterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
         $siswa = tabelmaster::create([
             'nama' => $request-> nama,
             'no_hp' => $request-> no_hp,

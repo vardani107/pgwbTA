@@ -268,7 +268,7 @@
                             </div>
                         @endforeach
                         
-                      
+                        {{-- {{asset('/template/img/'.$siswa->foto)}} --}}
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
 
@@ -360,15 +360,17 @@
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2 class="fw-bold">Palang Merah Indonesia</h2>
-                        <p>Melaksanakan kegiatan kemanusiaan di bidang kesehatan dan siaga bencana, mempromosikan
-                            prinsip-prinsip dasar Gerakan Palang merah Indonesia, dan mengembangkan kapasitas organisasi
-                            PMI. </p>
-
-                            <p> Jadwal Pelaksanaan <br>
-                                Hari : <br>
-                                Jam  :
-                            </p>
+                        @foreach ($data_update as $item)
+                        <div class="card border-0">
+                            <div class="card-body ">
+                                <h2 class="fw-bold">{{$item->judul}}</h2>
+                                <p class="card-text">{{$item->deskripsi}}</p>
+                                <h6 class="fw-bold">Jadwal Ekstrakulikuler</h6>
+                                <p class="card-text">Hari : {{$item->hari}}</p>
+                                <p class="card-text">Jam : {{$item->jam}}</p>
+                            </div>
+                        </div>
+                    @endforeach
                        
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->

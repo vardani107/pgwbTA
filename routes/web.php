@@ -20,6 +20,7 @@ use App\Http\Controllers\danceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+route::resource('daftar', daftarController::class);
 Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'authenticate']);
 Route::post('logout', [loginController::class, 'logout']);
@@ -28,8 +29,13 @@ route::resource('/', welcomeController::class);
 
 route::middleware('auth')->group(function ()  {
     route::resource('admin', adminController::class);
+    route::resource('siswa', siswaController::class);
     route::resource('futsal', futsalController::class);
     route::resource('dance', danceController::class);
+    route::resource('tabelmaster', tabelmasterController::class);
     Route::get('preview', [adminController::class, 'preview'])->name('admin.preview');
 });
 
+Route::get('/editview', function(){
+    return view('editview');
+});

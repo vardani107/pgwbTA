@@ -24,11 +24,11 @@
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-    <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/swiper.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/magnific-popup.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -267,7 +267,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <a href="" class="btn btn-warning" >Edit</a>
+                        
                       
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -417,17 +417,12 @@
                             <i class="fab fa-twitter"></i>
                         </a>
                         <a href="#your-link">
-                            <i class="fab fa-pinterest-p"></i>
+                            <i class="fa fa-whatsapp"></i>
                         </a>
                         <a href="#your-link">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#your-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#your-link">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+
                     </div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
