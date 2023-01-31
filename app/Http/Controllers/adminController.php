@@ -17,22 +17,12 @@ class adminController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function welcome()
+    public function index()
     {
-        $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id', '1')->get();
-        $daftar_ekskul = ekstrakulikuler::all();
+        $daftar_siswa = tabelmaster::all();
         $daftar_kelas = kelas::all();
-        // $dance = tabelmaster::where('ekstrakulikuler_id','1');
-        return view('/', compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
-    }
-
-    public function alip()
-    {
-        $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id', '1')->get();
         $daftar_ekskul = ekstrakulikuler::all();
-        $daftar_kelas = kelas::all();
-        // $dance = tabelmaster::where('ekstrakulikuler_id','1');
-        return view('alip.adminalip', compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
+        return view('admin', compact('daftar_siswa','daftar_kelas','daftar_ekskul'));
     }
 
     public function preview()
@@ -41,28 +31,14 @@ class adminController extends Controller
         return view('welcomeadmin', compact('data_update'));
     }
 
-    public function tambahdrumband()
-    {
-        return view('alip.tambahdrumband');
-    }
-
-
-    public function index()
-    {
-        $daftar_siswa = tabelmaster::all();
-        $daftar_kelas = kelas::all();
-        $daftar_ekskul = ekstrakulikuler::all();
-        return view('alip.adminalip', compact('daftar_siswa','daftar_kelas','daftar_ekskul'));
-    }
-
-    public function futsal()
-    {
-        $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id', '2')->get();
-        $daftar_ekskul = ekstrakulikuler::all();
-        $daftar_kelas = kelas::all();
-        // $dance = tabelmaster::where('ekstrakulikuler_id','1');
-        return view('adminfutsal', compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
-    }
+    // public function futsal()
+    // {
+    //     $daftar_siswa = tabelmaster::select()->where('ekstrakulikuler_id', '2')->get();
+    //     $daftar_ekskul = ekstrakulikuler::all();
+    //     $daftar_kelas = kelas::all();
+    //     // $dance = tabelmaster::where('ekstrakulikuler_id','1');
+    //     return view('adminfutsal', compact('daftar_ekskul', 'daftar_kelas', 'daftar_siswa'));
+    // }
     /**
      * Show the form for creating a new resource.
      *
