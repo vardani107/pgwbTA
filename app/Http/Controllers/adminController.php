@@ -19,10 +19,14 @@ class adminController extends Controller
 
     public function index()
     {
-        $daftar_siswa = tabelmaster::all();
+        $daftar_siswa = tabelmaster::with('kelas')->get();  
+        $pmr = tabelmaster::where('ekstrakulikuler_id',1)->get();
         $daftar_kelas = kelas::all();
+        $data = tabelmaster::all();
+    //     $daftar_kelas = kelas::with('daftar')->get();
+    //    return $daftar_siswa;
         $daftar_ekskul = ekstrakulikuler::all();
-        return view('admin', compact('daftar_siswa','daftar_kelas','daftar_ekskul'));
+        return view('admin', compact('daftar_siswa','daftar_kelas','daftar_ekskul','data','pmr'));
     }
 
     public function preview()
@@ -82,7 +86,7 @@ class adminController extends Controller
 
         // $daftar_siswa = tabelmaster::find($id);
 
-        return view('alip.editdrumband');
+        return view('/editview');
     }
 
     /**

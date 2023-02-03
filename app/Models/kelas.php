@@ -15,7 +15,8 @@ class kelas extends Model
     protected $table = 'kelas';
 
     public function daftar(){
-        return $this->hasManyThrough('App\Models\tabelmaster', 'kelas');
+        // return $this->hasManyThrough('App\Models\tabelmaster', 'kelas');
+        return $this->hasMany('App\Models\tabelmaster');
     }
 
 }
