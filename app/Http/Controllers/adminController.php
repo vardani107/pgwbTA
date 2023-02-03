@@ -8,7 +8,7 @@ use App\Models\kelas;
 use App\Models\tabelmaster;
 use App\Models\ekstrakulikuler;
 use App\Models\update;
-
+use Illuminate\Support\Facades\Session;
 class adminController extends Controller
 {
     /**
@@ -24,14 +24,17 @@ class adminController extends Controller
         $daftar_kelas = kelas::all();
         $data = tabelmaster::all();
     //     $daftar_kelas = kelas::with('daftar')->get();
-    //    return $daftar_siswa;
+    //    return $pmr;
         $daftar_ekskul = ekstrakulikuler::all();
-        return view('admin', compact('daftar_siswa','daftar_kelas','daftar_ekskul','data','pmr'));
+        $update = update::with('ekskul')->get(); 
+        // return $daftar_ekskul;
+        // $update = update::all();
+        return view('admin', compact('daftar_siswa','daftar_kelas','daftar_ekskul','data','pmr','update'));
     }
 
     public function preview()
     {
-        $data_update = update::all();
+        $update = update::all();
         return view('welcomeadmin', compact('data_update'));
     }
 
@@ -50,7 +53,14 @@ class adminController extends Controller
      */
     public function create()
     {
-        return view('alip.editdrumband');
+        $update = update::find($id);
+        return view('tambahkonten', compact('update'));
+    }
+
+    public function tambah_deskripsi()
+    {
+        $update = update::find($id);
+        return view('tambahkonten', compact('update'));
     }
 
     /**
@@ -59,20 +69,10 @@ class adminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -85,8 +85,9 @@ class adminController extends Controller
     {
 
         // $daftar_siswa = tabelmaster::find($id);
-
-        return view('/editview');
+        $update = update::find($id);
+        $daftar_ekskul = ekstrakulikuler::all();
+        return view('/editview',compact('update', 'daftar_ekskul'));
     }
 
     /**
@@ -96,17 +97,123 @@ class adminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    public function store(Request $request)
     {
+        $message = [
+            'required' => ':attribute harus diisi ',
+            'min' => ':attribute minimal :min karakter ya ',
+            'max' => 'attribute makasimal :max karakter ',
+            'numeric' => ':attribute harus diisi angka ',
+            'mimes' => 'file :attribute harus bertipe JPG, JPEG, PNG, BMP'
+        ];
+
+        $this->validate($request,[
+            'judul'=> 'required|min:3|max:30',
+            'deskripsi'=> 'required|numeric',
+            'jam'=> 'required',
+            'hari'=> 'required',
+            'foto'=> 'required|mimes:jpg,bmp,png,jpeg',
+            
+        ], $message );
+
+
         //
+        
+
+        //ambil parameter
+        $file = $request->file('foto');
+        
+        //rename
+        $nama_file = time() . '_' . $file->getClientOriginalName();
+        
+        //proses upload
+        $tujuan_upload = './images';
+        $file->move($tujuan_upload, $nama_file);
+
+        update::create([
+            'judul'=> $request-> nama,
+            'deskripsi'=> $request-> nisn,
+            'hari'=> $request-> alamat,
+            'jam'=> $request-> jk,
+            'foto'=> $nama_file,
+           
+        ]); 
+
+        Session::flash('success', 'data berhasil diUpdate !!!');
+        return redirect('/admin');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+   
+    public function update(Request $request, $id)
+    {
+        
+        // $message = [
+        //     'required' => ':attribute harus diisi ',
+        //     'min' => ':attribute minimal :min karakter',
+        //     'max' => 'attribute makasimal :max karakter ',
+        //     'numeric' => ':attribute harus diisi angka ',
+        //     'mimes' => 'file :attribute harus bertipe JPG, JPEG, BMP, PNG'
+        // ];
+
+        // $this->validate($request, [
+        //     'judul_up' => 'required|min:3|max:30',
+        //     'deskripsi_up' => 'required|numeric',
+        //     'hari_up' => 'required',
+        //     'jam_up' => 'required',
+        //     'foto_up'=> 'mimes:jpg,bmp,png,jpeg',
+        // ], $message);
+
+        if ($request->foto != '') {
+            // $update = update::find($id);
+            // file::delete('./images/' . $update->foto);
+
+            // //ambil informasi file yang diupload
+            $file = $request->file('foto');
+
+            //rename
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            // proses upload
+            $tujuan_upload = './images';
+            $file->move($tujuan_upload, $nama_file);
+
+            $update->judul = $request->judul_up;
+            $update->deskripsi = $request->deskripsi_up;
+            $update->hari = $request->hari_up;
+            $update->jam = $request->jam_up;
+            $update->foto = $nama_file;
+            $update->save();
+            // dd($update);
+            return redirect('admin');
+            
+
+        };
+        // } else {
+        //     $update=update::find($id);
+        //     $update->judul = $request->judul_up;
+        //     $update->deskripsi = $request->deskripsi_up;
+        //     $update->hari = $request->hari_up;
+        //     $update->jam = $request->jam_up;
+        //     $update->save();
+        //     return redirect('admin');
+
+        // };
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+   
+
     public function destroy($id)
     {
     }

@@ -228,35 +228,37 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-6">
-                    <div id="carouselExampleIndicators" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
-                               
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/dance2.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
-                            </div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="images/dance2.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/fotodance2.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
                         </button>
-                    </div>
+                      </div>
                 </div> <!-- end of col -->
                 
                 <div class="col-lg-6">
                     <div class="text-container">
-                        @foreach ($data_update as $item)
+                        @foreach ($update as $item)
                             <div class="card border-0">
                                 <div class="card-body ">
                                     <h2 class="fw-bold">{{$item->judul}}</h2>
@@ -290,29 +292,32 @@
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
-                    <div id="carouselExample" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/futsal1.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="..." class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="..." class="d-block w-100" alt="...">
-                            </div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden "> Previous</span>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="images/futsal1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/futsal1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
                         </button>
-                    </div>
+                      </div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -321,62 +326,64 @@
 
     {{-- PMR --}}
     <!-- Students -->
-    <div class="basic-3">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div id="carouselExampleCaptions" class="carousel slide">
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/pmr1.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                </div>
+    <div class="container">
+        <div class="basic-3">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="images/pmr1.jpg" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
                                 <img src="images/pmr2.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-
-                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/fotodance2.jpg" class="d-block w-100" alt="...">
+                              </div>
                             </div>
-                            <div class="carousel-item">
-                                <img src="images/pmr1.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </div> <!-- end of col -->
+                    
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            @foreach ($update as $item)
+                            
+                                <div class="card border-0">
+                                    <div class="card-body ">
+                                        <h2 class="fw-bold">{{$item->judul}}</h2>
+                                        <p class="card-text">{{$item->deskripsi}}</p>
+                                        <h6 class="fw-bold">Jadwal Ekstrakulikuler</h6>
+                                        <p class="card-text">Hari : {{$item->hari}} <br>
+                                            Jam : {{$item->jam}}</p>
+                                        <p class="card-text"></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h2 class="fw-bold">Palang Merah Indonesia</h2>
-                        <p>Melaksanakan kegiatan kemanusiaan di bidang kesehatan dan siaga bencana, mempromosikan
-                            prinsip-prinsip dasar Gerakan Palang merah Indonesia, dan mengembangkan kapasitas organisasi
-                            PMI. </p>
-
-                            <p> Jadwal Pelaksanaan <br>
-                                Hari : <br>
-                                Jam  :
-                            </p>
-                       
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-3 -->
-    <!-- end of students -->
+                            @endforeach
+                            
+                          
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+    
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-3 -->
+        </div>
+        <!-- end of students -->
 
 
 

@@ -19,8 +19,8 @@ class welcomeController extends Controller
     public function index()
     {
        
-        $data_update= update::all();
-        return view('welcome' , compact('data_update'));
+        $update= update::all();
+        return view('welcome' , compact('update'));
     }
 
 

@@ -15,10 +15,14 @@ return new class extends Migration
     {
         Schema::create('update', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
+            $table->BigInteger('ekstrakulikuler_id')->unsigned()->nullable();
+            $table->foreign('ekstrakulikuler_id')->references('id')->on('ekstrakulikuler')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->string('deskripsi');
             $table->string('hari');
             $table->string('jam');
+            $table->char('foto');
             $table->timestamps();
         });
     }

@@ -18,4 +18,10 @@ class ekstrakulikuler extends Model
         return $this->hasManyThrough('App\Models\tabelmaster', 'nama_ekskul');
     }
 
+    public function up(){
+        return $this->hasMany('App\Models\update');
+    }
+
+
+
 }

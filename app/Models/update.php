@@ -13,7 +13,12 @@ class update extends Model
         'deskripsi',
         'hari',
         'jam',
+        'foto'
     ];
+
+    public function ekskul(){
+        return $this->BelongsTo(ekstrakulikuler::class);
+    }
 
     protected $table = 'update';
 

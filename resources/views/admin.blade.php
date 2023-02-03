@@ -206,7 +206,7 @@
                             <div id="carouselExampleCaptions" class="carousel slide">
 
                                 <div class="carousel-inner style=" height=" 400px">
-                                    <div class="carousel-item active" >
+                                    <div class="carousel-item active">
                                         <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
                                         </div>
@@ -255,7 +255,7 @@
                 <div class="row">
                     <div class="col text-end">
                         <a href="/edit" class="btn btn-warning">Edit</a>
-                        
+
                         <a href="{{ route('admin.preview') }}" class="btn text-light">Preview</a>
                     </div>
                 </div>
@@ -272,8 +272,8 @@
                     <div class="col">
                         {{-- @foreach ($daftar_siswa as $item)
                         {{-- <h5> {{ $item->}}</h5> --}}
-                            {{-- @endforeach --}} 
-                        
+                        {{-- @endforeach --}}
+
                     </div>
                 </div>
             </div>
@@ -319,8 +319,8 @@
                         <tbody>
                             @foreach ($daftar_siswa as $item)
                                 {{-- @foreach ($kelas as $item) --}}
-                                    
-                                
+
+
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
@@ -342,71 +342,84 @@
             </div>
         </div>
     @elseif(Auth::User()->role == 'pmr')
-    <div class="row">
-        <div class="card border-0 p-4 mb-5 text-light" style="background-color: #2f3037">
-            <div class="col">
-                <h4 class="fw-bold">Edit Hero PMR</h4>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div id="carouselExampleCaptions" class="carousel slide">
-
-                            <div class="carousel-inner style=" height=" 400px">
-                                <div class="carousel-item active" >
-                                    <img src="images/fotodance1.jpg" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                    </div>
-                                </div>
-                                <div class="carousel-item" style="height: 300px">
-                                    <img src="images/fotodance2.jpg" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item" style="height: 400px">
-                                    <img src="images/dance2.jpg" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div> <!-- end of col -->
-                    <div class="col-lg-6">
-                        <div class="text-container">
-                            <label for="">Nama Ekstra</label>
-                            <h2 class="fw-bold">Dance</h2>
-
-                            <label class="mt-2" for="">Deskripsi Ekstra</label>
-                            <p class="text-light">Melaksanakan kegiatan kemanusiaan di bidang kesehatan dan siaga
-                                bencana, mempromosikan
-                                prinsip-prinsip dasar Gerakan Palang merah Indonesia, dan mengembangkan kapasitas
-                                organisasi
-                                PMI. </p>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-
-                </div> <!-- end of row -->
-            </div>
-            <div class="row">
-                <div class="col text-end">
-                    <a href="/edit" class="btn btn-warning">Edit</a>
-                    
-                    <a href="{{ route('admin.preview') }}" class="btn text-light">Preview</a>
+        <div class="row">
+            <div class="card border-0 p-4 mb-5 text-light" style="background-color: #2f3037">
+                <div class="row mb-4">
+                    <div class="col">
+                        <h4 class="fw-bold">Edit Hero PMR</h4>
+                    </div>
+                    <div class="col text-end">
+                        <a href="/admin/create/" class="btn btn-success">+</a>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="carouselExampleCaptions" class="carousel slide">
+
+                                <div class="carousel-inner style=" height=" 400px">
+                                    <div class="carousel-item active">
+                                        @foreach ($update as $item)
+                                            
+                                                <img src="{{ asset('images/'. $item->foto) }}" class="d-block w-100">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    {{$item->judul}}
+                                                </div>
+                                            
+                                        @endforeach
+                                    </div>
+                                    <div class="carousel-item" style="height: 300px">
+                                        <img src="images/fotodance2.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="height: 400px">
+                                        <img src="images/dance2.jpg" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col-lg-6">
+                            <div class="text-container">
+                                @if ($update->isEmpty())
+                                    <h4>data kosong</h4>
+                                @endif
+                                @foreach ($update as $item)
+                                    <div class="card border-0">
+                                        <div class="card-body ">
+                                            <h2 class="fw-bold">{{ $item->judul }}</h2>
+                                            <p class="card-text">{{ $item->deskripsi }}</p>
+                                            <h6 class="fw-bold">Jadwal Ekstrakulikuler</h6>
+                                            <p class="card-text">Hari : {{ $item->hari }}</p>
+                                            <p class="card-text">Jam : {{ $item->jam }}</p>
+                                        </div>
+                                    </div>
+                            </div> <!-- end of text-container -->
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div>
+                <div class="row">
+                    <div class="col text-end">
+                        <a href="{{ route('admin.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('admin.preview') }}" class="btn text-light">Preview</a>
+    @endforeach
+    </div>
+    </div>
+    </div>
     </div>
 
     {{-- card jumlah siswa --}}
@@ -419,8 +432,8 @@
                 <div class="col">
                     {{-- @foreach ($daftar_siswa as $item)
                     {{-- <h5> {{ $item->}}</h5> --}}
-                        {{-- @endforeach --}} 
-                    
+                    {{-- @endforeach --}}
+
                 </div>
             </div>
         </div>
@@ -448,8 +461,7 @@
                         {{-- <a href="{{ route('admindance.create') }}" class="btn btn-outline-success">
                             <i class="fas fa-plus"></i>
                         </a> --}}
-                        <button class="btn btn-outline-success" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
+                        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -465,22 +477,17 @@
                     </thead>
                     <tbody>
                         {{-- @foreach ($daftar_siswa as $item) --}}
-                        @foreach ($pmr as $i=>$item )
-                            
-                        
-                        
-                            
-                        
+                        @foreach ($pmr as $i => $item)
                             {{-- @foreach ($kelas as $item) --}}
-                            {{-- @if ($item ->ekstrakulikuler_id == 2) --}}
-                            
+                            {{-- @if ($item->ekstrakulikuler_id == 2) --}}
+
                             <tr>
-                                
+
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->kelas->kelas }}</td>
                                 <td>
-                                    <a href="{{ url('editview')}}" class="btn btn-outline-warning">
+                                    <a href="{{ url('editview') }}" class="btn btn-outline-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="" class="btn btn-outline-danger">
