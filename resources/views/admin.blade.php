@@ -349,39 +349,48 @@
                         <h4 class="fw-bold">Edit Hero PMR</h4>
                     </div>
                     <div class="col text-end">
-                        <a href="/admin/create/" class="btn btn-success">+</a>
+                        @if ($update->isEmpty())
+                            <a href="/admin/create/" class="btn btn-success">+</a>
+                        @endif
                     </div>
                 </div>
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-6">
+                            <div class="row">
+                                @if ($update->isEmpty())
+                                    <h4>Data Kosong</h4>
+                                @endif
+                            </div>
                             <div id="carouselExampleCaptions" class="carousel slide">
-
                                 <div class="carousel-inner style=" height=" 400px">
                                     <div class="carousel-item active">
                                         @foreach ($update as $item)
-                                            
-                                                <img src="{{ asset('images/'. $item->foto) }}" class="d-block w-100">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    {{$item->judul}}
-                                                </div>
-                                            
+                                            <img src="{{ asset('images/' . $item->foto) }}" class="d-block w-100">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                {{ $item->judul }}
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
                                         @endforeach
                                     </div>
-                                    <div class="carousel-item" style="height: 300px">
-                                        <img src="images/fotodance2.jpg" class="d-block w-100" alt="...">
+                                    {{-- <div class="carousel-item" style="height: 300px">
+                                        <img src="{{ asset('images/' . $item->foto) }}" class="d-block w-100" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
 
                                         </div>
-                                    </div>
-                                    <div class="carousel-item" style="height: 400px">
+                                    </div> --}}
+                                    {{-- <div class="carousel-item" style="height: 400px">
                                         <img src="images/dance2.jpg" class="d-block w-100" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
 
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <button class="carousel-control-prev" type="button"
+                                {{-- <button class="carousel-control-prev" type="button"
                                     data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
@@ -390,25 +399,26 @@
                                     data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
-                                </button>
+                                </button> --}}
                             </div>
                         </div> <!-- end of col -->
                         <div class="col-lg-6">
-                            <div class="text-container">
-                                @if ($update->isEmpty())
-                                    <h4>data kosong</h4>
-                                @endif
-                                @foreach ($update as $item)
-                                    <div class="card border-0">
-                                        <div class="card-body ">
-                                            <h2 class="fw-bold">{{ $item->judul }}</h2>
-                                            <p class="card-text">{{ $item->deskripsi }}</p>
-                                            <h6 class="fw-bold">Jadwal Ekstrakulikuler</h6>
-                                            <p class="card-text">Hari : {{ $item->hari }}</p>
-                                            <p class="card-text">Jam : {{ $item->jam }}</p>
-                                        </div>
+                            {{-- <div class="text-container"> --}}
+                            @foreach ($update as $item)
+                                <div class="container">
+                                    <div class="content text-white">
+                                        <h6 class="fw-bold">Judul Ekskul</h6>
+                                        <p>{{ $item->ekstrakulikuler_id }}</p>
+
+                                        <h6 class="fw-bold">Deskripsi Ekskul</h6>
+                                            <p>{{ $item->deskripsi }}</p>
+
+                                        <h6 class="fw-bold">Jadwal Ekstrakulikuler</h6>
+                                            <p>Hari : {{ $item->hari }}</p>
+                                            <p>Jam : {{ $item->jam }}</p>
                                     </div>
-                            </div> <!-- end of text-container -->
+                                </div>
+                                {{-- </div> <!-- end of text-container --> --}}
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->
                 </div>
@@ -416,6 +426,9 @@
                     <div class="col text-end">
                         <a href="{{ route('admin.edit', $item->id) }}" class="btn btn-warning">Edit</a>
                         <a href="{{ route('admin.preview') }}" class="btn text-light">Preview</a>
+                        <a href="{{ route('admin.hapuspmr', $item->id) }}" class="btn text-danger">
+                            <i class="fa fa-trash"></i>
+                        </a>
     @endforeach
     </div>
     </div>
@@ -430,10 +443,9 @@
                     <h4 class="fw-bold">Jumlah Siswa</h4>
                 </div>
                 <div class="col">
-                    {{-- @foreach ($daftar_siswa as $item)
-                    {{-- <h5> {{ $item->}}</h5> --}}
-                    {{-- @endforeach --}}
-
+                    {{-- @if ($update)
+                         <h5> {{ $item->}}</h5>
+                     @endif --}}
                 </div>
             </div>
         </div>

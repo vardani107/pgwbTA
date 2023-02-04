@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Node\NullableType;
 
 return new class extends Migration
 {
@@ -21,8 +22,8 @@ return new class extends Migration
                 ->onUpdate('cascade');
             $table->string('deskripsi');
             $table->string('hari');
-            $table->string('jam');
-            $table->char('foto');
+            $table->time('jam');
+            $table->char('foto')->nullable();
             $table->timestamps();
         });
     }

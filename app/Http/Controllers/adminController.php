@@ -53,13 +53,14 @@ class adminController extends Controller
      */
     public function create()
     {
-        $update = update::find($id);
-        return view('tambahkonten', compact('update'));
+        $daftar_ekskul = ekstrakulikuler::all();
+        $update = update::all();
+        return view('tambahkonten', compact('update', 'daftar_ekskul'));
     }
 
     public function tambah_deskripsi()
     {
-        $update = update::find($id);
+        $update = update::all();
         return view('tambahkonten', compact('update'));
     }
 
@@ -100,48 +101,45 @@ class adminController extends Controller
 
     public function store(Request $request)
     {
-        $message = [
-            'required' => ':attribute harus diisi ',
-            'min' => ':attribute minimal :min karakter ya ',
-            'max' => 'attribute makasimal :max karakter ',
-            'numeric' => ':attribute harus diisi angka ',
-            'mimes' => 'file :attribute harus bertipe JPG, JPEG, PNG, BMP'
-        ];
+        // $message = [
+        //     'required' => ':attribute harus diisi ',
+        //     'min' => ':attribute minimal :min karakter ya ',
+        //     'max' => 'attribute makasimal :max karakter ',
+        //     'numeric' => ':attribute harus diisi angka ',
+        //     'mimes' => 'file :attribute harus bertipe JPG, JPEG, PNG, BMP'
+        // ];
 
-        $this->validate($request,[
-            'judul'=> 'required|min:3|max:30',
-            'deskripsi'=> 'required|numeric',
-            'jam'=> 'required',
-            'hari'=> 'required',
-            'foto'=> 'required|mimes:jpg,bmp,png,jpeg',
+        // $this->validate($request,[
+        //     'judul'=> 'required|min:3|max:30',
+        //     'deskripsi'=> 'required|numeric',
+        //     'jam'=> 'required',
+        //     'hari'=> 'required',
+        //     'foto'=> 'required|mimes:jpg,bmp,png,jpeg',
             
-        ], $message );
-
-
-        //
+        // ], $message );
         
 
         //ambil parameter
         $file = $request->file('foto');
         
         //rename
-        $nama_file = time() . '_' . $file->getClientOriginalName();
+        $nama_file = $file->getClientOriginalName();
         
         //proses upload
         $tujuan_upload = './images';
         $file->move($tujuan_upload, $nama_file);
 
         update::create([
-            'judul'=> $request-> nama,
-            'deskripsi'=> $request-> nisn,
-            'hari'=> $request-> alamat,
-            'jam'=> $request-> jk,
+            'ekstrakulikuler_id'=> $request-> ekstrakulikuler_id,
+            'deskripsi'=> $request-> deskripsi,
+            'hari'=> $request-> hari,
+            'jam'=> $request-> jam,
             'foto'=> $nama_file,
            
         ]); 
 
-        Session::flash('success', 'data berhasil diUpdate !!!');
-        return redirect('/admin');
+        // Session::flash('success', 'data berhasil diUpdate !!!');
+        return redirect()->back();
     }
 
     /**
@@ -154,56 +152,44 @@ class adminController extends Controller
     public function update(Request $request, $id)
     {
         
-        // $message = [
-        //     'required' => ':attribute harus diisi ',
-        //     'min' => ':attribute minimal :min karakter',
-        //     'max' => 'attribute makasimal :max karakter ',
-        //     'numeric' => ':attribute harus diisi angka ',
-        //     'mimes' => 'file :attribute harus bertipe JPG, JPEG, BMP, PNG'
-        // ];
+        $message = [
+            'required' => ':attribute harus diisi ',
+            'min' => ':attribute minimal :min karakter',
+            'max' => 'attribute makasimal :max karakter ',
+            'numeric' => ':attribute harus diisi angka ',
+            'mimes' => 'file :attribute harus bertipe JPG, JPEG, BMP, PNG'
+        ];
 
-        // $this->validate($request, [
-        //     'judul_up' => 'required|min:3|max:30',
-        //     'deskripsi_up' => 'required|numeric',
-        //     'hari_up' => 'required',
-        //     'jam_up' => 'required',
-        //     'foto_up'=> 'mimes:jpg,bmp,png,jpeg',
-        // ], $message);
+        $this->validate($request, [
+            'judul_up' => 'required|min:3|max:30',
+            'deskripsi_up' => 'required|numeric',
+            'hari_up' => 'required',
+            'jam_up' => 'required',
+            'foto_up'=> 'mimes:jpg,bmp,png,jpeg',
+        ], $message);
 
-        if ($request->foto != '') {
-            // $update = update::find($id);
-            // file::delete('./images/' . $update->foto);
+        update::create([
+            
+        ]);
 
-            // //ambil informasi file yang diupload
-            $file = $request->file('foto');
+        // $foto_baru = $request->file('image')->getClientOriginalName();
+        // $path = $request->file('image')->store('public/images');
 
-            //rename
-            $nama_file = time() . "_" . $file->getClientOriginalName();
-            // proses upload
-            $tujuan_upload = './images';
-            $file->move($tujuan_upload, $nama_file);
 
-            $update->judul = $request->judul_up;
-            $update->deskripsi = $request->deskripsi_up;
-            $update->hari = $request->hari_up;
-            $update->jam = $request->jam_up;
-            $update->foto = $nama_file;
-            $update->save();
-            // dd($update);
-            return redirect('admin');
+        //     $request->judul = $request->judul_up;
+        //     $request->deskripsi = $request->deskripsi_up;
+        //     $request->hari = $request->hari_up;
+        //     $request->jam = $request->jam_up;
+        //     // $update->foto = $nama_file;
+        //     $save->foto = $foto_baru;
+        //     $save->path = $path;
+        //     $update->foto = 
+        //     $update->save();
+        //     dd($update);
+        //     return redirect('admin');
             
 
-        };
-        // } else {
-        //     $update=update::find($id);
-        //     $update->judul = $request->judul_up;
-        //     $update->deskripsi = $request->deskripsi_up;
-        //     $update->hari = $request->hari_up;
-        //     $update->jam = $request->jam_up;
-        //     $update->save();
-        //     return redirect('admin');
-
-        // };
+        
     }
 
     /**
@@ -223,5 +209,12 @@ class adminController extends Controller
         $daftar_siswa = tabelmaster::find($id)->delete();
         // Session::flash('success', 'data berhasil dihapus !!!');
         return redirect('/adminalip');
+    }
+
+    public function hapus_pmr($id)
+    {
+        $daftar_siswa = update::find($id)->delete();
+        // Session::flash('success', 'data berhasil dihapus !!!');
+        return redirect('/admin');
     }
 }
