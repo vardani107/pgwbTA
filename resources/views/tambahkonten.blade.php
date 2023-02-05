@@ -32,23 +32,26 @@
 
                         <div class="mb-4">
                             <label for="deskripsi" class="form-label  text-white">Deskripsi</label>
-                                <textarea class="form-control" name="deskripsi" id="deskripsi" rows="2"></textarea>
+                            <textarea class="form-control" maxlength="255" minlength="1" name="deskripsi" id="deskripsi" rows="2" required></textarea>
+                            {{-- <input type="text" class="form-control" name="deskripsi" id="deskripsi" style="height: 70px"> --}}
+                            {{-- <input class="form-control" name="deskripsi" id="deskripsi"
+                                placeholder="Required example textarea" onkeyup="checkInput()" required> --}}
                         </div>
 
                         <div class="row mb-4">
                             <p class=" text-white fw-bold">Jadwal Ekstrakulikuler</p>
                             <div class="col">
                                 <label for="hari" class="form-label  text-white">Hari :</label>
-                                <select name="hari" class="form-control form-select"
-                                    aria-label="Default select example" id="hari" required>
+                                <select name="hari" class="form-control form-select" aria-label="Default select example"
+                                    id="hari" required>
                                     <option selected value="">Pilih Hari</option>
-                                        <option value="Senin">Senin</option>
-                                        <option value="Selasa">Selasa</option>
-                                        <option value="Rabu">Rabu</option>
-                                        <option value="Kamis">Kamis</option>
-                                        <option value="Jumat">Jumat</option>
-                                        <option value="Sabtu">Sabtu</option>
-                                        <option value="Minggu">Minggu</option>
+                                    <option value="Senin">Senin</option>
+                                    <option value="Selasa">Selasa</option>
+                                    <option value="Rabu">Rabu</option>
+                                    <option value="Kamis">Kamis</option>
+                                    <option value="Jumat">Jumat</option>
+                                    <option value="Sabtu">Sabtu</option>
+                                    <option value="Minggu">Minggu</option>
                                 </select>
                             </div>
                             <div class="col">
